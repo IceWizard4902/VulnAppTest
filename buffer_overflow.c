@@ -14,7 +14,7 @@ void bof()
 	int byte1, byte2;
 	char buf[BUFSIZE];
 	printf("Buffer starts at: %p\n", buf);
-  fflush(stdout);
+    fflush(stdout);
 
 	memset(buf, 0, BUFSIZE);
 	byte1 = fread(buf1, 1, BUFSIZE, stdin);
