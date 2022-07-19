@@ -2,9 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define A 64
+#define B 128
+
 int main(void) {
-    int a = 64;
-    int f = 128;
-	char buf[a];
-    buf[f] = 90;
+    char buf[A];
+    memset(buf, 0, A);
+    buf[B] = 90;
+    printf("%d", buf[B]);
 }
