@@ -12,7 +12,7 @@ int main(void) {
 
     int f = 128;
 
-	char buf[BUFSIZE];
-	memset(buf, 0, BUFSIZE);
-    buf[120] = 'l'
+	char buf[a];
+	memset(buf, 0, a);
+    buf[f] = 'l'
 }
