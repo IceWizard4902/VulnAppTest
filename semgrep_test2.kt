@@ -1,6 +1,6 @@
-public class Cls {
+public class Vuln {
 
-    public fun ldapBind(env: Environment): Void {
+    public fun ldapBindUnsafe(env: Environment): Void {
         // ruleid:anonymous-ldap-bind
         env.put(Context.SECURITY_AUTHENTICATION, "none")
         val ctx: DirContext = InitialDirContext(env)
