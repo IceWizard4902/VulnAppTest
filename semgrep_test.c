@@ -1,28 +1,34 @@
-#include <stdio.h>
+#include <stddef.h>
+#include <string.h>
 
-int
-ok() {
-    // ok:double_goto
-    if (0) {
-        goto ONE;
-        goto ONE;
+int main()
+{
+    char *s = "Hello";
+
+    // ruleid:c-string-equality
+    if (s == "World") {
+        return -1;
     }
-    printf("did not go to one\n");
-    return 0;
-ONE:
-    printf("went to one\n");
-    return 1;
-}
 
-int
-main(int argc, char *argv[]) {
-    // ruleid:double_goto
-    if (0)
-        goto ONE;
-        goto ONE;
-    printf("did not go to one\n");
+    // ok:c-string-equality
+    if (strcmp(s, "World") == 0) {
+        return 1;
+    }
+
+    // ok:c-string-equality
+    if (!strcmp(s, "World")) {
+        return 1;
+    }
+
+    // ok:c-string-equality
+    if (s == 0) {
+      return 1;
+    }
+
+    // ok:c-string-equality
+    if (NULL == s) {
+      return 1;
+    }
+
     return 0;
-ONE:
-    printf("went to one\n");
-    return 1;
 }
