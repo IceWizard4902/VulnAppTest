@@ -6,10 +6,19 @@
 #define B 128
 
 int main(void) {
-    char buf[A];
+    char bof[A];
+    char buf[sizeof(int)];
+
     int index;
-    memset(buf, 0, A);
-    scanf("%d", &index);
-    buf[index] = 90
-    printf("%d", buf[index]);
+    memset(bof, 0, A);
+
+    if (!fgets(buf, sizeof(int), stdin))
+    {
+        // reading input failed, give up:
+        return 1;
+    }
+
+    index = atoi(buf);
+    bof[index] = 90;
+    printf("%d", bof[index]);
 }
