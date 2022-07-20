@@ -7,7 +7,9 @@
 
 int main(void) {
     char buf[A];
+    int index;
     memset(buf, 0, A);
-    buf[B] = 90;
-    printf("%d", buf[B]);
+    scanf("%d", &index);
+    buf[index] = 90
+    printf("%d", buf[index]);
 }
